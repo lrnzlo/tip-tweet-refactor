@@ -57,9 +57,9 @@ contract Tipping {
         return(msg.sender, msg.value, _tweetID);
     }
 
-    function sendTip(string memory _tweetID) external payable returns(string memory){
+    function sendTip(string memory _tweetID) external payable returns(string memory, uint256){
         require(msg.sender.balance > 0, "You NO money!");
-        return (_tweetID); 
+        return (_tweetID, msg.value); 
     }
 
     // TIPPED
